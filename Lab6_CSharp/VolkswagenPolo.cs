@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3cSharp
+{
+    class VolkswagenPolo : Car, IVolkswagenEngine
+    {
+
+        bool EngineOHeat { get; set; }
+        public VolkswagenPolo(int fuel, string color) :
+            base(fuel, isBroken: false, color: color, length: 2, height: 2, weight: 100, distance: 0)
+        {
+            Speed = 90;
+            MaxFuel = 90;
+            Consumption = 12;
+            TypeOfCar = CarType.HatchBack;
+            Wheels = 4;
+
+        }
+
+        
+
+        public void OverHeat()
+        {
+            Console.WriteLine("The Engine is overheated, speed = 0");
+            EngineOHeat = true;
+            Speed = 0;
+            Console.ReadKey();
+
+        }
+
+        public void EngineRepair()
+        {
+            Console.WriteLine("The Engine is repaired. Speed is 90 now");
+            EngineOHeat = false;
+            Speed = 90;
+        }
+
+
+        public override void PrintInfo()
+        {
+            Console.WriteLine("Car : VolkswagenPolo");
+            Console.WriteLine("Type : " + TypeOfCar);
+            base.PrintInfo();
+
+            if(EngineOHeat)
+                Console.WriteLine("Engine is overheated, repair is needed\n");
+        }
+        public override Car AddNewVehicle()
+        {
+            Console.WriteLine("Color : ");
+            string color = Console.ReadLine();
+            Console.WriteLine("Distance : ");
+            NumberCheck(Console.ReadLine(), out int distance);
+            Console.WriteLine("Fuel(in L) : ");
+            NumberCheck(Console.ReadLine(), out int fuel);
+            bool izBroken = DefineBool(Console.ReadLine());
+            
+            
+            return new VolkswagenPolo(fuel, color);
+
+
+        }
+    }
+}
