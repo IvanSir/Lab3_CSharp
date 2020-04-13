@@ -4,4 +4,4 @@
 # 5 Lab was uploaded in Lab5_CSharp.
 (Vehicle, Car, Volvo, Volkswagen, Chevrolet and MainClass)
 
-# Lab 4,7 (pulled request)
+# Lab 4,6,7 (pulled request)
