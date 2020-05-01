@@ -1,8 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _3cSharp
 {
@@ -21,7 +19,7 @@ namespace _3cSharp
 
         }
 
-        
+
 
         public void OverHeat()
         {
@@ -46,23 +44,9 @@ namespace _3cSharp
             Console.WriteLine("Type : " + TypeOfCar);
             base.PrintInfo();
 
-            if(EngineOHeat)
+            if (EngineOHeat)
                 Console.WriteLine("Engine is overheated, repair is needed\n");
         }
-        public override Car AddNewVehicle()
-        {
-            Console.WriteLine("Color : ");
-            string color = Console.ReadLine();
-            Console.WriteLine("Distance : ");
-            NumberCheck(Console.ReadLine(), out int distance);
-            Console.WriteLine("Fuel(in L) : ");
-            NumberCheck(Console.ReadLine(), out int fuel);
-            bool izBroken = DefineBool(Console.ReadLine());
-            
-            
-            return new VolkswagenPolo(fuel, color);
 
-
-        }
     }
 }
