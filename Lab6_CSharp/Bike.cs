@@ -43,11 +43,6 @@ namespace _3cSharp
 
         }
 
-        public override void PrintInfo()
-        {
-            base.PrintInfo();
-        }
-
         
     }
 }
