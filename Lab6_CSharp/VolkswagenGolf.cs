@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace _3cSharp
 {
     class VolkswagenGolf : Car, IVolkswagenEngine
     {
         bool EngineOHeat { get; set; }
-        public VolkswagenGolf(int fuel,bool isBroken, string color, int distance) : 
+        public VolkswagenGolf(int fuel, bool isBroken, string color, int distance) :
             base(fuel, isBroken: isBroken, color: color, length: 2, height: 2, weight: 100, distance: distance)
         {
             Speed = 50;
@@ -65,16 +61,6 @@ namespace _3cSharp
             if (EngineOHeat)
                 Console.WriteLine("Engine is overheated, repair is needed");
         }
-        public override Car AddNewVehicle()
-        {
-            Console.WriteLine("Color : ");
-            string color = Console.ReadLine();
-            Console.WriteLine("Distance : ");
-            NumberCheck(Console.ReadLine(), out int distance);
-            Console.WriteLine("Fuel(in L) : ");
-            NumberCheck(Console.ReadLine(), out int fuel);
-            bool izBroken = DefineBool(Console.ReadLine());
-            return new VolkswagenGolf(fuel, izBroken, color, distance);
-        }
+
     }
 }
